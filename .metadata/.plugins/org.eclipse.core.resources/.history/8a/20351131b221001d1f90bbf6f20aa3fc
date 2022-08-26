@@ -1,0 +1,21 @@
+package object.finalize;
+
+public class FinalizeMain {
+
+	public static void main(String[] args) {
+		Counter counter = null;
+		
+		for(int i = 1; i <= 50;i++) {
+			counter = new Counter(i);
+			counter = null;
+			
+			/* GC는 메모리가 부족할 때 CPU가 한가할 때 JVM(자바 가상 머신)에 의해 자동 실행된다.
+			 * 
+			 * 
+			 */
+			System.gc();
+		}
+		
+	}
+
+}

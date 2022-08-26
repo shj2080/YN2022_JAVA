@@ -1,0 +1,30 @@
+package cal;
+
+class Add{ //더하기 클래스
+	
+}
+
+class Sub{	//빼기 클래스
+	
+}
+
+class Mul{	//곱하기 클래스
+	
+}
+
+class Div{	//나누기 클래스
+	
+}
+
+/*
+ * 1개의 소스파일에 여러 클래스를 설계할 때
+ * public은 반드시 1개의 클래스에만 붙일 수 있다.
+ * 파일이름 = public붙은 클래스이름
+ * 
+ * 만약
+ */
+public class Calculator { //계산기
+	
+	
+	
+}

@@ -1,0 +1,10 @@
+package queue.mail;
+
+public class MailQueueMain {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

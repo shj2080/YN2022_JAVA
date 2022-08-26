@@ -1,0 +1,110 @@
+package ifswitch;
+
+import java.util.Scanner;
+
+public class CafeOrder4 {
+
+	public static void main(String[] args) {
+
+		System.out.println("--do~while문 카페 주문 처리 시작-------------------");
+		Scanner sc = new Scanner(System.in);
+		
+		String order = null;
+		
+		final int priceAmericano = 3000, priceCafelatte = 4000, priceCafuchino = 3500;	//가격 변경 불가
+		
+		
+		int cntAmericano = 0;// 아메리카노 주문 횟수
+		int cntCafelatte = 0;// 카페라떼 주문 횟수
+		int cntCafuchino = 0;// 카푸치노 주문 횟수
+		
+		int totalPrice = 0;
+		int totalCnt = 0; // 총 주문 횟수
+
+		do {
+			System.out.print("메뉴(아메리카노(=Americano):3000원, 카페라떼:4000원, 카푸치노:3500원)중에서 주문\n(단,주문안함(=NoOrder)입력하고 바로 나감, 주문 그만하고 싶으면 stop입력)>");
+			order = sc.next().trim().toLowerCase();
+
+			if (order.equalsIgnoreCase("NoOrder") || order.equals("주문안함"))
+				break;
+
+			switch (order) {
+			case "아메리카노":
+			case "americano":
+				System.out.println(order + "를 주문하셨습니다.");
+				System.out.print("-- 몇 잔을 주문하시겠습니까? > ");
+				cntAmericano = sc.nextInt();
+				if(cntAmericano > 0) {
+					System.out.println(order + " " + cntAmericano + "잔을 주문하셨습니다.");
+					
+				}else {
+					System.out.println("0보다 큰 수를 입력해주세요.");
+				}
+				totalCnt += cntAmericano;
+				totalPrice += (cntAmericano * priceAmericano);
+				
+				break;
+				
+			case "카페라떼":
+				System.out.println(order + "를 주문하셨습니다.");
+				System.out.print("-- 몇 잔을 주문하시겠습니까? > ");
+				cntCafelatte = sc.nextInt();
+				if(cntCafelatte > 0) {
+					System.out.println(order + " " + cntCafelatte + "잔을 주문하셨습니다.");
+					
+				}else {
+					System.out.println("0보다 큰 수를 입력해주세요.");
+				}
+				totalCnt += cntCafelatte;
+				totalPrice += (cntCafelatte * priceCafelatte);
+				
+				break;
+				
+			case "카푸치노":
+				System.out.println(order + "를 주문하셨습니다.");
+				System.out.print("-- 몇 잔을 주문하시겠습니까? > ");
+				cntCafuchino = sc.nextInt();
+				if(cntCafuchino > 0) {
+					System.out.println(order + " " + cntCafuchino + "잔을 주문하셨습니다.");
+					
+				}else {
+					System.out.println("0보다 큰 수를 입력해주세요.");
+				}
+				totalCnt += cntCafuchino;
+				totalPrice += (cntCafuchino * priceCafuchino);
+				
+				break;
+				
+			case "stop":
+				System.out.println("그만 주문하겠습니다.");
+				System.out.println("---------영수증------------------------------");
+				String result = "";
+				
+				if (cntAmericano >= 1) {
+					result += "아메리카노 " + cntAmericano + "잔에 " + (priceAmericano * cntAmericano) + "원, ";
+					//if (cntCafelatte >= 1 || cntCafuchino >= 1) System.out.print(", "); // , 처리
+				}
+
+				if (cntCafelatte >= 1) {
+					result += "카페라떼 " + cntCafelatte + "잔에 " + (priceCafelatte * cntCafelatte) + "원, ";
+					//if (cntCafuchino >= 1) System.out.print(", ");// , 처리
+				}
+
+				if (cntCafuchino >= 1)
+					result += "카푸치노 " + cntCafuchino + "잔에 " + (priceCafuchino * cntCafuchino) + "원, ";
+				
+				System.out.println(result.substring(0, result.length()-2));
+				System.out.println("\n총 " + totalCnt + "잔, 총 가격 = " + totalPrice + "원");
+
+				System.out.println("---------영수증------------------------------");
+				break;
+			default:
+				System.out.println("메뉴에 없습니다.");// break;
+			}
+		} while (!order.equalsIgnoreCase("stop"));
+		// }while(order.toLowerCase().compareTo("stop") != 0);
+
+		System.out.println("--do~while문 카페 주문 처리 끝-------------------");
+	}
+
+}

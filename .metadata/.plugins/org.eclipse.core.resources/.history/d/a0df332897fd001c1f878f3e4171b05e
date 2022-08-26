@@ -1,0 +1,12 @@
+//실행용 클래스 - main()있는 클래스 (프로그램 실행)
+//라이브러리용 + 실행용 클래스
+package book;
+
+public class BookMain {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

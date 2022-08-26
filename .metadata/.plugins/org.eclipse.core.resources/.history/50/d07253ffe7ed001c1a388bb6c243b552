@@ -1,0 +1,12 @@
+package forex;
+
+public class BasicFor {
+
+	public static void main(String[] args) {
+		/** 1. 반복문을 사용안하면 **/
+		
+		
+
+	}
+
+}

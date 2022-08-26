@@ -1,0 +1,13 @@
+/**
+ * 일반적으로 클래스의 자료형을 모르는 상태에서 Class 클래스를 활용하여 그 클래스의 정보를 가져오고
+ */
+package classex.reflection;
+
+public class ReflectionMain {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

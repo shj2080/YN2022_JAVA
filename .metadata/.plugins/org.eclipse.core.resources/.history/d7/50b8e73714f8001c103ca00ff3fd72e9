@@ -1,0 +1,18 @@
+
+public class ArrayTesting {
+
+	public static void main(String[] args) {
+		/** [과제-1] **/
+		//6-27 [과제-1] Arrays.toString() 메서드를 사용하지 않고, [A, B, C] 출력 (for문 사용)
+		//A, B, C, 출력에서 마지막 ,제외하여 [A, B, C] 출력
+		
+		char[] ch2 = {'A', 'B', 'C'};
+		
+		System.out.println("--- [과제-1] 방법-1 ---");
+		for() {
+			
+		}
+		
+	}
+
+}

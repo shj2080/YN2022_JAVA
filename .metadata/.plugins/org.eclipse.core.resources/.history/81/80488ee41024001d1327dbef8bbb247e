@@ -1,0 +1,27 @@
+package stack_test;
+
+import java.util.ArrayList;
+
+class MyStack {
+	//멤버변수
+	private ArrayList<String> arrayStack;
+	
+	//생성자
+	MyStack() {
+		arrayStack = new ArrayList<String>();
+	}
+	
+	//메서드
+	
+	
+	
+} //MyStack 클래스 끝
+
+public class StackTestMain {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

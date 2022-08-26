@@ -1,0 +1,65 @@
+package random_math;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class RandomExample {
+
+	public static void main(String[] args) {
+		//선택번호
+		int[] sn = new int[6]; //[0,0,0,0,0,0] 선택번호 6개 모두 0으로 채워짐
+		
+		/****************************************************************
+		 * Random 클래스
+		 * r.nextInt();		int 타입 전 범위에서 난수 발생
+		 * 
+		 * 0   <=	r.nextInt(int n); < n	(int형 난수 발생)
+		 * 
+		 * 0   <=	r.nextInt(100); < 100   (0~99 난수 발생)
+		 * 0   <=	r.nextInt(101)+0; < 101   (0~100 난수 발생)
+		 * 
+		 * 0   <=	r.nextInt(45); < 45   (0~44 난수 발생)
+		 * 0+1 <=	r.nextInt(45)+1; < 45+1   (1~45 난수 발생)
+		 * 
+		 * 		r.nextInt(6)+1;		      (1~6 난수 발생)
+		 * 		r.nextInt(99-10+1)+10;				  (10~99 난수 발생)
+		 * 
+		 * ★★ "시작~끝" 난수 발생
+		 *    r.nextInt(끝-시작+1)+시작;
+		 * 
+		 ****************************************************************/
+		//선택번호를 랜덤하게 얻기 위한 Random 객체 생성
+		//Random r = new Random(seed); //Random 객체 생성 방법-1 : seed가 같으면 같은 난수 발생
+		
+		Random r = new Random(); //Random 객체 생성 방법-2
+		
+		System.out.print("선택번호 > ");
+		
+		int i;
+		for(i = 0; i < sn.length; i++) {
+			sn[i] = r.nextInt(45)+1;	//1부터 시작해서 45개(정수1~45 중 랜덤으로 발생시켜 배열에 저장)
+		}
+		System.out.println(Arrays.toString(sn));
+		
+		//당첨번호
+		int[] wn = new int[6]; //[0,0,0,0,0,0] 선택번호 6개 모두 0으로 채워짐
+		long seed = System.currentTimeMillis(); //현재 시간으로 seed 값이 주어지면 계속 변경되어 난수도 바뀜
+		Random r2 = new Random(seed); //long타입의 seed값 주면 랜덤으로 같은 값들이 생성
+		
+		System.out.print("당첨 번호 > ");
+		
+		for(i = 0; i < wn.length; i++) {
+			wn[i] = r2.nextInt(45)+1;	//1부터 시작해서 45개(정수1~45 중 랜덤으로 발생시켜 배열에 저장)
+		}
+		System.out.println(Arrays.toString(wn));
+		
+		//당첨 여부
+		System.out.print("당첨 여부 > ");
+		for(i=0; i<wn.length; i++) {
+			if()
+		}
+		
+		
+	}
+
+}

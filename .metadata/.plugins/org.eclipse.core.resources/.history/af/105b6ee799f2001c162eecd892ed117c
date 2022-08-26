@@ -1,0 +1,56 @@
+package ifswitch;
+
+import java.util.Scanner;
+
+public class CafeOrder {
+
+	public static void main(String[] args) {
+		//[과제-1] 전체적인 프로그램 흐름 참고하여 작성하기
+		//별도의 과제참고자료 참조
+		//주문안함, NoOrder(대소문자 구분X) 시 바로 나가기, stop 시 영수증 출력
+		//주문받은 커피들을 저장하는 변수 필요
+		
+		String order = null; //주문 입력받는 변수
+		int result = 0;		//총 가격(0으로 초기화)
+		final int americano_price = 3000, cafelatte_price = 4000, cappuccino_price = 3500; //커피 가격 상수
+		
+		
+		Scanner sc = new Scanner(System.in);		//입력 받기 위한 scanner 객체 생성
+		
+		do {
+			System.out.println("--do~while문 카페 주문 처리 시작-----------");
+			System.out.println("메뉴(Americano:3000원, 카페라떼:4000원, 카푸치노:3500원)중에서 주문");
+			System.out.print("단, 주문안함(=NoOrder) 주문그만하고 싶으면 stop입력)>");
+			order = sc.next().trim();
+			
+			if(order.equalsIgnoreCase("NoOrder") || order.equals("주문안함")) {
+				break;
+			}
+			
+			switch(order) {
+				case "Americano":
+					
+					break;
+				case "카페라떼":
+					
+					break;
+				case "카푸치노":
+					
+					break;
+				default:
+					System.out.println("없는 메뉴입니다.");
+			}
+			
+		} while(!order.equalsIgnoreCase("stop"));
+		
+		if (result != 0) {
+			System.out.println("-------영수증------------------");
+			
+			
+		}
+		
+		System.out.println("--do~while문 카페 주문 처리 끝-------");
+		
+		sc.close(); // 스캐너 닫음
+	}
+}

@@ -1,0 +1,12 @@
+package thread_test;
+
+public class ThreadMain {
+
+	public static void main(String[] args) {
+		Thread t1 = new Thread();
+		
+		System.out.println("Main 끝남");
+		
+	}
+
+}

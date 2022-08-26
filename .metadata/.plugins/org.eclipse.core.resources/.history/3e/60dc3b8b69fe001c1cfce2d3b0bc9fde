@@ -1,0 +1,51 @@
+//실행용 클래스 - main()있는 클래스 (프로그램 실행)
+//라이브러리용 + 실행용 클래스
+package book;
+
+//같은 패키지에 있는 클래스는 자동 import됨(Book 클래스가 import됨)
+import book.Book;//경고
+
+public class BookMain {
+	
+	//public BookMain() {}
+	
+	//메서드
+	public static void main(String[] args) {
+		Book b1 = new Book(); //기본값으로 채워짐
+		System.out.println(b1.bacode);
+		System.out.println(b1.bookCompany);
+		
+		Book.bookCompany = "일반출판사";
+		System.out.println(Book.bookCompany);
+		
+		System.out.println(b1.getBookAuthor());//null
+		b1.setBookAuthor("강민재");
+		System.out.println(b1.getBookAuthor());
+		
+		//System.out.println(b1); //book.Book@7852e922
+		System.out.println(b1.toString());
+		
+		String s = "김미강";
+		System.out.println(s);	//김미강
+		System.out.println(s.toString());
+		
+		Book b2 = new Book();
+		System.out.println(b2.bacode);
+		
+		Book b3 = new Book("자바", "황보창민");
+		System.out.println(b3.bacode);
+		
+		Book b4 = new Book("오라클", "김도영", 12345);
+		System.out.println(b4.bacode);
+		//b4.bacode = 11111;
+		
+		Book b5 = new Book("HTML", "김도영", 67899);
+		System.out.println(b5.bacode);
+		
+		//System.out.println(b5);
+		System.out.println(b5.toString());
+		
+		b5.showBookInfo();
+	}
+
+}

@@ -1,0 +1,20 @@
+/**
+ * [Set 인터페이스] index 사용안하므로 순서X, 중복X => 중복되지 않고 저장순서가 중요하지 않을 때 사용
+ * 1. HashSet 클래스 : 저장 순서에 상관없는 출력 결과
+ * 					Set은 index 사용안하므로 "저장순서가 중요하지 않다."
+ * 
+ * 그러나
+ * 2. LinkedHashSet 클래스 : 저장 순서 유지하는 예외적인 Set 클래스
+ * 
+ * 3. TreeSet 클래스 : 이진트리를 기반으로 검색 기능을 강화
+ */
+package set;
+
+public class HashSetExample {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

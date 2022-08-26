@@ -1,0 +1,38 @@
+
+public class ArrayExample {
+
+	public static void main(String[] args) {
+		System.out.println("** 배열을 사용하지 않았을 때 **");
+		
+		//Stack 메모리에 존재하는 변수
+		int s1 = 83;
+		int s2 = 88;
+		int s3 = 95;
+		int s4 = 87;
+		//----Stack-----
+		
+		//더한 합=? (반복문, 배열 사용안했을 때)
+		int sum = s1+s2+s3+s4;
+		System.out.println("합="+sum);
+		
+		/*
+		sum = 0;
+		//반복문 이용 => 합을 구할 수 없다. (이유?값 사이에 일정한 규칙이 없어서 반복문 사용불가)
+		for(int i = 1; i <= 4; i++) {
+			sum += si;//X 오류
+		}
+		*/
+		
+		/** 배열 선언, 생성(Heap메모리)과 동시에 값 목록 대입 **/
+		System.out.println("** 배열을 사용했을 때 : 같은 타입의 데이터만 저장가능, 크기 고정 **");
+		
+		//1. int 타입 배열----------------------------------------------
+		int[] scores = {83, 88, 95, 87};
+			   //index  0   1   2   3
+		
+		for(;;) {
+			
+		}
+	}
+
+}

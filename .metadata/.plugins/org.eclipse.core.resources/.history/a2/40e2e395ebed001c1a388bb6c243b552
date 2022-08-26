@@ -1,0 +1,50 @@
+package forex;
+
+public class BasicFor {
+
+	public static void main(String[] args) {
+		/** 1. 반복문을 사용안하면 **/
+		System.out.println("지금 이순간 최선을...");
+		System.out.println("지금 이순간 최선을...");
+		System.out.println("지금 이순간 최선을...");
+		System.out.println("지금 이순간 최선을...");
+		System.out.println("지금 이순간 최선을...");
+		
+		System.out.println(); //구분용 빈줄
+		
+		/**
+		 * ★★ '같은 실행문'이거나 '일정한 규칙성'이 있어야 반복문을 사용할 수 있다.
+		 */
+		
+		/** 2. 반복문을 사용하면 : 카운터 변수 **/
+		/**
+		 * for(1.변수선언 및 초기화(한번만) ; 2.조건문; 4.변수증가/감소 -> 2) {
+		 * 	3. 조건문이 참이면 실행
+		 * }
+		 * 3. 조건문이 거짓이면 for문을 빠져나옴(=반복문 끝)
+		 */
+		int i;	//카운터 변수 1 2 3 4 5 <= 5(참), 6 <= 5(거짓)
+		for(i=1;i <= 5;i++) {
+			System.out.println("지금 이순간 최선을...");
+		}
+		System.out.println("거짓이 되어 for문 빠져나올 때의 i=" + i);
+		System.out.println(); // 구분용 빈줄
+		
+		// 카운터 변수 0 1 2 3 4 <= 4(참), 5 <= 4(거짓)
+		for(i=0;i <= 4;i++) {
+			System.out.println("지금 이순간 최선을...");
+		}
+		System.out.println("거짓이 되어 for문 빠져나올 때의 i=" + i + "\n");	// 구분용 빈줄
+		
+		// 카운터 변수 5 4 3 2 1 >= 1(참), 0 >= 1(거짓)
+		for(i=5; i >= 1;i--) {
+			System.out.println("지금 이순간 최선을...");
+		}
+		System.out.println("거짓이 되어 for문 빠져나올 때의 i=" + i + "\n");	// 구분용 빈줄
+		
+		//※변수 i를 카운터 변수로만 사용한다면 초기값은 어떤 정수라도 가능함
+		
+		
+	}
+
+}

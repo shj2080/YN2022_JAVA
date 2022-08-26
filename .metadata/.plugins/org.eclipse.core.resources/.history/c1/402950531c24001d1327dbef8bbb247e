@@ -1,0 +1,13 @@
+/** [Queue 인터페이스]
+ * Queue : 먼저
+ */
+package queue;
+
+public class QueueTest_ArrayList {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

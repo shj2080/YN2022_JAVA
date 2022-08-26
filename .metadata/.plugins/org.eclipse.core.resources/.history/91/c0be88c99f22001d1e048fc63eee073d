@@ -1,0 +1,15 @@
+/**
+ * ArraysList : 
+ * 
+ * Arrays	  : 배열을 조작하기 위한 클래스 
+ */
+package list;
+
+public class ArraysAsList {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

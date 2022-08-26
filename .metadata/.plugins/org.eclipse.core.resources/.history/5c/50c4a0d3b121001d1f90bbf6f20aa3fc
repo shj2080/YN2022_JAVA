@@ -1,0 +1,14 @@
+package object.finalize;
+
+public class FinalizeMain {
+
+	public static void main(String[] args) {
+		Counter counter = null;
+		
+		for(int i = 1; i <= 50;i++) {
+			
+		}
+		
+	}
+
+}

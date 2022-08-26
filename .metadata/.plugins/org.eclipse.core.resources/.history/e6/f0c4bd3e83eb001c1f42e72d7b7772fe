@@ -1,0 +1,183 @@
+package scannerstring;
+
+public class StringMethod {
+
+	public static void main(String[] args) {
+		String s1 = "";		//값이 없는 문자열 객체 생성.	length():문자의 수 0
+		String s2 = null;		//null:클래스타입에만(s2가 참조하는 문자열객체가 없다.)
+		
+		//String 객체 생성 2가지 방법
+		String str1 = "문자열 상수";				//1."문자열 상수"로 객체 생성 -> "공유 상수 풀"에 등록
+		String str2 = "문자열 상수";
+		String str3 = new String("문자열 상수");	//2.new 생성자();호출하여 객체 생성
+		
+		System.out.println(str1);		//str1:String 객체의 주소=>주소가 참조하는 값이 출력
+		//Object의 toString()메서드를 대부분의 라이브러리 클래스에서는 재정의하여 우리에게 제공함
+		System.out.println(str1.toString()); 	//결과로 "문자열 상수" 출력(재정의된 toString()호출한 결과임)
+		
+		//str1주소 == str2주소 : 주소비교 => true
+		if(str1 == str2) System.out.println("같은 주소이므로 같은 문자열객체를 참조한다.");
+		else System.out.println("다른 주소이므로 다른 문자열객체를 참조한다.");
+		//str1주소 == str3주소 : 주소비교 => false
+		if(str1 == str3) System.out.println("같은 주소이므로 같은 문자열객체를 참조한다.");
+		else System.out.println("다른 주소이므로 다른 문자열객체를 참조한다.");
+		
+		System.out.println(); 		//구분용 빈줄
+		
+		/**
+		 * 주소를 비교하는 것은 중요하지 않다.
+		 * 주소가 참조하는 객체의 값을 비교하는 것이 중요하다.
+		 * equals(Object 타입 매개변수) : 두 문자열의 '값을 비교'하여 같으면 true, 다르면 false 리턴
+		 * ※ Object 타입 변수 : 모든 클래스 타입의 객체들을 값으로 받아들일 수 있다.
+		 * 
+		 * equalsIgnoreCase(String 타입 매개변수) : 영어의 대소문자 구분없이 '값을 비교하여' 같으면 true, 다르면 false 리턴
+		 */
+		
+		if(str1.equals(str2)) System.out.println("참조하는 객체 안의 값이 같은 문자열이다.");
+		else System.out.println("참조하는 객체 안의 값이 다른 문자열이다.");
+		
+		if(str1.equals(str3)) System.out.println("참조하는 객체 안의 값이 같은 문자열이다.");
+		else System.out.println("참조하는 객체 안의 값이 다른 문자열이다.");
+		
+		if("AB".equalsIgnoreCase("ab")) System.out.println("대소문자 구분없이 같은 문자열이다.");
+		else System.out.println("대소문자 구분없이 다른 문자열이다.");
+		
+		if("AB".equals("ab")) System.out.println("대소문자 구분하여 같은 문자열이다.");
+		else System.out.println("대소문자 구분하여 다른 문자열이다.");
+		
+		/**
+		 * compareTo(String 타입 매개변수) : 두 문자열의 값을 하나씩 비교하여 int(0 또는 0이 아닌 값)를 결과로 돌려줌
+		 * compareToIgnoreCase(String 타입 매개변수) : 영어의 대소문자 구분없이 '값을 비교'하여 int(0 또는 0이 아닌 값)를 결과로 돌려줌
+		 */
+		
+		s1 = "AB";	//'65' '66'
+		s2 = "AC";	//'65' '67'
+		//'65' '66' - '65' '67' => 음수
+		
+		if(s1.compareTo(s2) == 0) System.out.println("객체 안의 값이 같은 문자열이다.");
+		else System.out.println("객체 안의 값이 다른 문자열이다.");//else (s1.compareTo(s2) != 0)
+		
+		if(s1.compareTo(s2) > 0) System.out.println("뒤의 문자열이 앞선다.");
+		else if(s1.compareTo(s2) < 0) System.out.println("앞의 문자열이 앞선다."); 	//else (s1.compareTo(s2) <= 0)
+		else System.out.println("두 문자열이 같다.");	//else (s1.compareTo(s2) == 0)
+		
+		//'97' '99' - '97' => 양수
+		if("ac".compareTo("ab") > 0) System.out.println("뒤의 문자열이 앞선다.");
+		else if("ac".compareTo("ab") < 0) System.out.println("앞의 문자열이 앞선다."); 	//else ("ac".compareTo("ab") <= 0)
+		else System.out.println("두 문자열이 같다.");	//else ("ac".compareTo("ab") == 0)
+		
+		if("ab".compareToIgnoreCase("AB") != 0) System.out.println("대소문자 구분없이 다른 문자열이다.");
+		else System.out.println("대소문자 구분없이 같은 문자열이다.");
+		
+		System.out.println(); 		//구분용 빈줄
+		
+		/**
+		 * concat() : 두 문자열 연결(=결합)하여 "하나의 새로운 문자열 객체" 생성
+		 * 			  catenate
+		 */
+		s1 = "여러분~";
+		//String s = "조금만 더 힘내세요~";
+		s1 = s1.concat("조금만 더 힘내세요~");	//"여러분~조금만 더 힘내세요~"
+		System.out.println(s1);	//s1이 참조하는 문자열 객체의 값이 출력
+		System.out.println(s1.toString());
+		
+		/**
+		 * length() : 문자열의 길이(=문자의 수)
+		 * (예)"홍 길 동" 5
+		 */
+		System.out.println("\"신나는 점심시간!\"의 문자열 길이="+"신나는 점심시간!".length()); 	// 
+		
+		/**
+		 * indexOf() : 찾고자 하는 해당 문자열이 있으면
+		 * 			   해당문자열의 시작index번호를 결과로 돌려줌(없으면 -1 리턴)
+		 * 			   ★자바에서는 index번호는 0부터 시작
+		 * 			   ★SQL에서는 index번호는 1부터 시작
+		 */
+		int indexNumber = s1.indexOf("조금만");	//4
+		System.out.println(indexNumber);
+		
+		System.out.println(s1.indexOf("최고"));	//-1
+		
+		if(s1.indexOf("조금만") != -1) {
+			System.out.println("해당 문자열이 속해있군요~");
+		} else System.out.println("해당 문자열이 없군요~");
+		
+		/**
+		 * replace(기존, 대체) : 다른 문자열로 대체하여 "하나의 새로운 문자열 객체" 생성
+		 */
+		s2 = s1.replace('~', '!');	//"여러분~조금만 더 힘내세요~"			"여러분!조금만 더 힘내세요!"
+		System.out.println(s1);
+		System.out.println(s2);
+		
+		s1 = s1.replace("조금만", "훨씬");
+		System.out.println(s1);
+		
+		System.out.println(); 	//구분용 빈줄
+		
+		/**
+		 * trim() : 앞뒤 공백 제거
+		 */
+		String tel1="	010";
+		String tel2="1234	";
+		String tel3="	5678	";
+		
+		String tel = tel1.trim() + "-" + tel2.trim() + "-" +tel3.trim(); //"010" + "-" +"1234" + "-" + "5678"
+		System.out.println(tel1);
+		System.out.println(tel2);
+		System.out.println(tel3);
+		System.out.println(tel);
+		
+		/**
+		 * toLowerCase() : 모두 소문자로, toUpperCase() : 모두 대문자로 변환
+		 */
+		String str4 = "java";	//"문자열 상수" 객체 생성 '공유상수풀'에 등록
+		String str5 = "JAVA";	//"문자열 상수" 객체 생성 '공유상수풀'에 등록
+		System.out.println(str4.toUpperCase()); //"JAVA"
+		System.out.println(str4);	//"java"
+		
+		if(str4.equals(str5)) System.out.println("같은 문자열");
+		else System.out.println("다른 문자열");
+				
+		if(str4.equalsIgnoreCase(str5)) System.out.println("대소문자 구분없이 같은 문자열");
+		else System.out.println("대소문자 구분없이 다른 문자열");
+		
+		//if("JAVA".equals(str5))
+		if(str4.toUpperCase().equals(str5)) System.out.println("같은 문자열");
+		else System.out.println("다른 문자열");
+		
+		str5 = str5.toLowerCase();	//"java"
+		System.out.println(str5); 	//"java"
+		
+		if(str4.toUpperCase().equalsIgnoreCase(str5)) System.out.println("대소문자 구분없이 같은 문자열");
+		else System.out.println("대소문자 구분없이 다른 문자열");
+		
+		/*************************************************************************
+		 * 기본 타입(int, double, char, boolean..)을 "문자열"로 변환하는 방법 - 2가지
+		 */
+		
+		//[방법-1]
+		int i = 10;
+		String str6 = String.valueOf(i);//10 -> " '1' '0' 	 	 메서드, 필드(=멤버변수)"
+		char ch = str6.charAt(0); 	//'1'
+		System.out.println("ch=" + ch + ",ch의 코드값=" + (int)ch);
+		
+		ch = String.valueOf(12.3).charAt(2); 	//12.3 -> " '1' '2' '.' '3' 	메서드, 필드(=멤버변수)"
+		System.out.println("ch=" + ch + ",ch의 코드값=" + (int)ch);
+		
+		
+		ch = "12.3".charAt(2);
+		System.out.println("ch=" + ch + ",ch의 코드값=" + (int)ch);
+		
+		boolean b= true;
+		str6 = String.valueOf(b).substring(1); 	//true -> " 't' 'r' 'u' 'e' "	-> " 'r' 'u' 'e' "
+		System.out.println("true의 부분 문자열="+str6);
+		
+		//★자바의 메서드 특징 : 매개변수 2개이고 둘 다 index번호를 가진다면(시작index, 끝index + 1)
+		str6 = String.valueOf(b).substring(1, 2+1); 	//true -> " 't' 'r' 'u' 'e' "	-> " 'r' 'u' 'e' "
+		System.out.println("true의 부분 문자열="+str6);
+		
+		
+		
+	}
+
+}

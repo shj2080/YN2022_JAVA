@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package classex.reflection;
+
+public class ReflectionMain {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

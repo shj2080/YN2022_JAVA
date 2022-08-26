@@ -1,0 +1,109 @@
+import java.util.Scanner;
+
+public class UseVariable {
+
+	public static void main(String[] args) {
+		/*
+		 * = (대입연산자)  		==(같다)	3==3
+		 * 반드시 왼쪽에는 '변수'만 존재함 = 오른쪽에는 리터럴(1, -2, '1' 등) 또는 메소드 또는 연산식...
+		 */
+		
+		/*** 논리형 : 참(true) or 거짓(false) *********************/
+		System.out.println("----- 논리형 ------------------------");
+		
+		boolean b = true;	// 자료형 변수명 = 리터럴
+		System.out.println(b);	// 변수 안의 값 출력
+		
+		b = false;	// 변수 안의 값을 변경
+		System.out.println(b);
+		
+		// 논리형은 참과 거짓을 판별하는 if문(조건 참/거짓)
+		if(b) System.out.println("조건이 참이면 실행");
+		else System.out.println("조건이 거짓이면 실행");
+		
+		if(true) System.out.println("참1");
+		else System.out.println("거짓1");
+		
+		if(false) System.out.println("참2");
+		else System.out.println("거짓2");
+		
+		/*** 정수 : 음수 0 양수 *********************/
+		System.out.println("----- 정수형 ------------------------");
+		int i;	// 변수 선언
+		i = 7;	// 변수 초기화
+		
+		int i2 = 3;		// 변수 선언과 동시에 초기화
+		
+		if(i == i2) System.out.println("1-두수가 같다.");
+		else System.out.println("1-두수가 다르다.");
+		
+		i2 = 7;
+		if(i == i2) System.out.println("2-두수가 같다.");
+		else System.out.println("2-두수가 다르다.");
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력>");
+		int num1 = sc.nextInt(); // 정수를 읽어들임
+		
+		System.out.print("정수 입력>");
+		int num2 = sc.nextInt(); // 정수를 읽어들임
+		
+		System.out.println(num1 + num2);
+		
+		if(num1 > num2) System.out.println("앞의 정수가 크다.");	
+		else if(num1 < num2)System.out.println("뒤의 정수가 크다.");	// else num1<=num2
+		else System.out.println("두수가 같다.");
+		
+		
+		int i3 = 12, i4 = 15;	// 같은 타입
+		
+		int i5, i6;	// 선언
+		i5 = 20; i6 = 30;	// i5 = 20, i6 = 30; (오류)
+		
+		/*
+		 * 자료형 변수형 = 리터럴
+		 * 리터럴(이름없는 메모리에 저장):정수-int 타입 4바이트, L:8바이트
+		 * 						 실수-double 타입 8바이트
+		 */
+		short s = (short)123456;	// 강제 형변환 후 데이터 손실 발생
+		System.out.println("short로 형변환한 값 : "+s);
+		
+		int s2 = 123456;
+		System.out.println(s2);
+		
+		//자동형변환 : 자료형 큰 범위 = 작은 범위
+		long s3 = 123456;	//long(8) = int(4) : int가 long으로 "자동형변환"되어 대입
+		
+		long i7 = 12345678912L;	//L:4->8바이트(long)
+		System.out.println("i7="+i7); 	// 데이터 손실X
+		
+		int i8 = (int)12345678912L; //강제 형변환 후 데이터 손실 발생
+		System.out.println("i8="+i8);
+		
+		int i9 = (int)123L; //강제 형변환 하여도 데이터 손실 발생 안함(이유?잘린 앞의 4바이트엔 의미없는 0으로 채워져서)
+		System.out.println("i9="+i9);
+		
+		/*** 실수 : float(4), double(8) 정밀도가 double이 좋다. *********************/
+		float f = 1;	//1(정수) -> 1.0(실수 float)로 자동형변환되어 대입
+		System.out.println("f="+f);
+		
+		double d = 1;	//1(정수) -> 1.0(실수 double)로 자동형변환되어 대입
+		System.out.println("d="+d);
+		
+		float f2 = 1.0F;	//1.0(double) -> 1.0(F:float)
+		System.out.println("f2="+f2);
+		
+		float f3 = 12345678912L; 	//long이 float으로 자동형변환되어 대입
+		System.out.println("f3="+f3);
+		
+		double d2 = 12345678912L;	//long이 double로 자동형변환되어 대입
+		System.out.println("d2="+d2);
+		
+		
+		
+		sc.close();  	// 스캐너 사용 후 반드시 닫아줘야함
+	}
+
+}

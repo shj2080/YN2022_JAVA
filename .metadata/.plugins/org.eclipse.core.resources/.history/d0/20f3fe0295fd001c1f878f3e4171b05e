@@ -1,0 +1,11 @@
+//실행용 클래스 - main()있는 클래스
+package book;
+
+public class BookMain {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

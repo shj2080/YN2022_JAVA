@@ -1,0 +1,18 @@
+//실행용 클래스 - main()있는 클래스 (프로그램 실행)
+//라이브러리용 + 실행용 클래스
+package book;
+
+//같은 패키지에 있는 클래스는 자동 import됨(Book 클래스가 import됨)
+import book.Book;//경고
+
+public class BookMain {
+	
+	//public BookMain() {}
+	
+	//메서드
+	public static void main(String[] args) {
+		Book b1 = new Book();
+		
+	}
+
+}

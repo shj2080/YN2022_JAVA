@@ -1,0 +1,54 @@
+package stack_test;
+
+class MyStack {
+	//멤버변수
+	private String[] stringStack;
+	int top;	//저장된 객체
+	
+	//생성자
+	MyStack(int StackSize) {
+		stringStack = new String[StackSize];
+	}
+	
+	//메서드
+	void push(String data) {
+		if(top == stringStack.length-1) {
+			System.out.println("스택이 전부 찼습니다.");
+			return;
+		}
+		
+		stringStack[top++] = data;  //스택에 저장
+	}
+	
+	String pop() {
+		if(top == 0) {
+			System.out.println("스택이 비었습니다.");
+			return null;
+		}
+		
+		return stringStack[top--]; 	//스택에서 값 리턴 후 제거
+	}
+	
+	int size() {
+		return stringStack.length;
+	}
+	
+} //MyStack 클래스 끝
+
+public class StackTestMain {
+
+	public static void main(String[] args) {
+		MyStack mystack = new MyStack(3);
+		mystack.size();
+		
+		mystack.push("a");
+		mystack.push("b");
+		mystack.push("c");
+		
+		System.out.println("마지막 값 : " + mystack.pop());
+		System.out.println("마지막 값 : " + mystack.pop());
+		System.out.println("마지막 값 : " + mystack.pop());
+		System.out.println("마지막 값 : " + mystack.pop());
+	}
+
+}

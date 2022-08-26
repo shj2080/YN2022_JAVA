@@ -1,0 +1,10 @@
+package classex;
+
+public class PersonClassMain {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

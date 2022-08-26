@@ -1,0 +1,55 @@
+package ifswitch;
+
+import java.util.Scanner;
+
+public class CafeOrder2 {
+
+	public static void main(String[] args) {
+		System.out.println("--do~while문 카페 주문 처리 시작-------------------");
+		Scanner sc = new Scanner(System.in);
+		String order;
+		int a=0;//아메리카노 주문 횟수
+		int b=0;//카페라떼 주문 횟수
+		int c=0;//카푸치노 주문 횟수
+		
+		do {
+			System.out.print("메뉴(아메리카노:3000원, 카페라떼:4000원, 카푸치노:3500원)중에서 주문\n(단,주문안함(=NoOrder)입력하고 바로 나감, 주문 그만하고 싶으면 stop입력)>");
+			order = sc.next();
+			
+			if(order.equalsIgnoreCase("NoOrder") || order.equals("주문안함")) break;
+			
+			switch(order) {
+			case "아메리카노" : a++; System.out.println(order+"를 주문하셨습니다."); break;
+			case "카페라떼" : b++; System.out.println(order+"를 주문하셨습니다."); break;
+			case "카푸치노" : c++; System.out.println(order+"를 주문하셨습니다."); break;
+			case "stop"  : System.out.println("그만 주문하겠습니다.");
+						System.out.println("---------영수증------------------------------");
+							
+							
+							if(a>=1) {
+								System.out.print("아메리카노 "+a+"잔에 "+(3000*a)+"원");
+								if(b>=1 || c>=1) System.out.print(", ");
+							}
+		
+							if(b>=1) {
+								System.out.print("카페라떼 "+b+"잔에 "+(4000*b)+"원");
+								if(c>=1) System.out.print(", ");
+							}
+							
+							if(c>=1) 
+								System.out.print("카푸치노 "+c+"잔에 "+(3500*c)+"원");
+							
+							System.out.println("\n총 "+(a+b+c)+"잔, 총 가격 = "+(3000*a+4000*b+3500*c)+"원");
+							
+						
+						System.out.println("---------영수증------------------------------"); break;
+			default      : System.out.println("메뉴에 없습니다.");//break;
+			}
+			
+		}while(order.compareTo("stop") != 0);
+		
+		
+		System.out.println("--do~while문 카페 주문 처리 끝-------------------");
+	}
+
+}

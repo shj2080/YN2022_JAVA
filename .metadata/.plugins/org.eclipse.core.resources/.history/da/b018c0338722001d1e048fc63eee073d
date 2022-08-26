@@ -1,0 +1,8 @@
+package thread_test;
+
+public class Data implements Runnable{
+	public int id;
+	public String tmp;
+	
+	
+}

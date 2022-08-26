@@ -1,0 +1,38 @@
+package stack_test;
+
+import java.util.ArrayList;
+
+class MyStack {
+	//멤버변수
+	private ArrayList<String> arrayStack;
+	
+	//생성자
+	MyStack() {
+		arrayStack = new ArrayList<String>();
+	}
+	
+	//메서드
+	void push(String data) {
+		arrayStack.add(data);
+	}
+	
+	String pop() {
+		if(arrayStack.size() == 0) {
+			System.out.println("스텍이 비었습니다.");
+			return null;
+		}
+		
+		return arrayStack.remove(arrayStack.size() - 1);
+	}
+	
+	
+} //MyStack 클래스 끝
+
+public class StackTestMain {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

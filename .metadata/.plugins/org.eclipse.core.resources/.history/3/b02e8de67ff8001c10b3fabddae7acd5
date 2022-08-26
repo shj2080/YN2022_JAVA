@@ -1,0 +1,10 @@
+package random_math;
+
+public class RandomExample {
+
+	public static void main(String[] args) {
+		//다음 수업
+		
+	}
+
+}

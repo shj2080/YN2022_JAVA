@@ -1,0 +1,14 @@
+/*
+ * ArrayList와 LinkedList의 속도차를 확인
+ * 
+ */
+package list;
+
+public class ArrayList_LinkedList_Example {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

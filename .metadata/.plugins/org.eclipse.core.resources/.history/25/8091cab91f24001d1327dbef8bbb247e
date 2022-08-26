@@ -1,0 +1,5 @@
+package queue.mail;
+
+public class Mail {
+
+}

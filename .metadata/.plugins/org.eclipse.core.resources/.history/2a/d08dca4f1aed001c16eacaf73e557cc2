@@ -1,0 +1,88 @@
+/*
+ * 클래스 종류 3가지 : 모든 클래스에는 생성자가 존재한다.
+ * 1. 라이브러리용(=설계도) : main() 없다.
+ * 
+ * 2. 실행용 : main() 있다.
+ * 
+ * 3. 라이브러리용 + 실행용 : main()도 있고
+ * 					  + 필요한 멤버변수(=필드=filed)와 메서드들()을 추가하면
+ * 					  이 실행용 클래스도 라이브러리용으로 사용가능함
+ * 
+ */
+package ifswitch;
+
+import java.util.Scanner;
+
+public class IfSwitch {
+	//멤버변수
+	//기본생성자
+	//메서드 추가
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("점수 입력(0~100)>");
+		int n1 = sc.nextInt();	//88
+		
+		//단독 if문 : 서로 독립적 - 원하는 결과 안 나옴
+		if(n1>=90) System.out.println("A");	//90~100
+		if(n1>=80) System.out.println("B");
+		if(n1>=70) System.out.println("C");
+		if(n1>=60) System.out.println("D");
+		if(n1<60) System.out.println("F");
+		
+		System.out.println(); 	//구분용 빈줄
+		
+		//단독 if문 : 서로 독립적 - [해결법-조건 추가]
+		if(n1>=90) System.out.println("A");	//90~100
+		
+		if(80 <= n1 && n1 < 90) System.out.println("B");	//80~89
+		
+		if(70 <= n1 && n1 < 80) System.out.println("C");	//70~79
+		
+		if(60 <= n1 && n1 < 70) System.out.println("D");	//60~69
+		
+		if(n1<60) System.out.println("F");
+		
+		//if~else if....else : 서로 연결된 한덩어리 - 여러 조건문들 중 반드시 하나만 참
+		if(n1>=90) {
+			System.out.print("A");	//90~100
+			System.out.println("학점");
+		}
+		else if(n1>=80) {	//else의미 :  n1<90
+			System.out.print("B");	
+			System.out.println("학점");
+		}
+		else if(n1>=70) {	//else의미 : n1<80
+			System.out.print("C");
+			System.out.println("학점");
+		}
+		else if(n1>=60) {	//else의미 : n1<70
+			System.out.print("D");
+			System.out.println("학점");
+		}
+		else {				//else의미 : n1<60
+			System.out.print("F");
+			System.out.println("학점");
+		}
+		
+		System.out.println("학점");
+		
+		//System.out.println("학점");
+		
+		System.out.println(); 	//구분용 빈줄
+		
+		if(n1>=90) System.out.print("A");	//90~100
+		else if(n1>=80) System.out.print("B");	//else n1<90
+		else if(n1>=70) System.out.print("C");	//else n1<80
+		else if(n1>=60) System.out.print("D");	//else n1<70
+		else System.out.print("F");	//else n1<60
+		
+		System.out.println("학점");
+		
+		System.out.println(); 	//구분용 빈줄
+		
+		
+		sc.close();
+	}
+
+}

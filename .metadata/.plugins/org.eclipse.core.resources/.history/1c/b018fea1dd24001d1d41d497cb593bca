@@ -1,0 +1,16 @@
+/**
+ * String이나 Integer 등 제공받은 클래스들은 Comparable<T> 인터페이스를 이미 구현하여
+ * 재정의된 compareTo() 메서드로 오름차순 정렬되어 추가됨
+ * 
+ * 우리가 만든 사용자 정의 클래스는
+ */
+package set.treesetmember;
+
+//사용자 정의 클래스
+public class Member {
+	//1. private 멤버변수
+	private int memberId;//회원아이디
+	private String memberName;//회원 이름
+	
+	
+}

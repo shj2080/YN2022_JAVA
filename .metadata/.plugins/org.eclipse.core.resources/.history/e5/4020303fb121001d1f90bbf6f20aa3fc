@@ -1,0 +1,18 @@
+package object.finalize; //353p_교재
+//Object의 메서드 중 getClass() , wait(), notify() 는 재정의 불가
+public class Counter {
+	private int no;
+
+	public Counter(int no) {
+		super();
+		this.no = no;
+	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		super.finalize(); //Object의 finalize()는 {}텅 비어서 하는 일이 아무것도 없지만 안정성을 고려해서 삽입
+		System.out.println();
+	}
+	
+	
+}

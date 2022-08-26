@@ -1,0 +1,18 @@
+package ifswitch;
+
+public class CafeOrderPractice {
+
+	public static void main(String[] args) {
+		/*
+		 * 6/30 테스트 연습용
+		 * 주문안함, NoOrder(대소문자 구분X) 시 바로 나가기, stop 시 영수증 출력
+		 * 아메리카노, 카페라떼, 카푸치노
+		 */
+		
+		//------ 변수 선언 구간 ------/
+		
+		//------ 변수 선언 구간 ------/
+		
+	}
+
+}

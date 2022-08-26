@@ -1,0 +1,14 @@
+/*
+ * ArrayList와 LinkedList의 속도차를 확인
+ * - 첫번째 index에 추가나 삭제가 빈번히 일어나는 곳
+ */
+package list;
+
+public class ArrayList_LinkedList_Example {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

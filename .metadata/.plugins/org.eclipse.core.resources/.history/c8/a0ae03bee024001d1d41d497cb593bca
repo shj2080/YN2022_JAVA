@@ -1,0 +1,15 @@
+package set.treesetmember;
+
+public class TreeSetMemberMain {
+
+	public static void main(String[] args) {
+		System.out.println("-------------- [처음부터 오름차순 정렬] ----------------");
+		TreeSetMember tsm = new TreeSetMember();
+		
+		Member m1 = new Member(3, "이승기");
+		//오류? ClassCastException: class set.treesetmember.Member cannot be cast to class java.lang.Comparable
+		tsm.addMember(m1);
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+/**
+ * ArraysList : 
+ * 
+ * Arrays : 
+ */
+package list;
+
+public class ArraysAsList {
+
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

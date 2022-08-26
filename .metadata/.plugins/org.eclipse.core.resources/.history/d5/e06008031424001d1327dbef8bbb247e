@@ -1,0 +1,44 @@
+package stack_test;
+
+class MyStack {
+	//멤버변수
+	private String[] stringStack;
+	
+	//생성자
+	MyStack(int StackSize) {
+		stringStack = new String[StackSize];
+	}
+	
+	//메서드
+	void push(String data) {
+		stringStack
+	}
+	
+	String pop() {
+		if(stringStack.length == 0) {
+			System.out.println("스택이 비었습니다.");
+			return null;
+		}
+		
+		return stringStack(stringStack.length - 1);
+	}
+	
+	
+} //MyStack 클래스 끝
+
+public class StackTestMain {
+
+	public static void main(String[] args) {
+		MyStack mystack = new MyStack();
+		
+		mystack.push("a");
+		mystack.push("b");
+		mystack.push("c");
+		
+		System.out.println("마지막 값 : " + mystack.pop());
+		System.out.println("마지막 값 : " + mystack.pop());
+		System.out.println("마지막 값 : " + mystack.pop());
+		System.out.println("마지막 값 : " + mystack.pop());
+	}
+
+}
