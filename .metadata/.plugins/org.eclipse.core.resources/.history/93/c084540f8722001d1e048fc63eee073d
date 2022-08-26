@@ -1,8 +1,0 @@
-package thread_test;
-
-public class Data {
-	public int id;
-	public String tmp;
-	
-	
-}

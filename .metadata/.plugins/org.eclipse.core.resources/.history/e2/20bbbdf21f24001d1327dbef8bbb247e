@@ -1,7 +1,0 @@
-package queue.mail;
-
-public class Mail {
-	private String toSome; 		//사람이름
-	private String mailTitle;	//메일제목
-	
-}

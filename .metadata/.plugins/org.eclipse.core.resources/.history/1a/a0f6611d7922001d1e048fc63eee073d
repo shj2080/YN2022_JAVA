@@ -1,8 +1,0 @@
-package classex;
-
-public class Person {//Person.java -> Person.class(컴파일된 class 파일)
-	private String name;
-	private int age;
-	
-	
-}

@@ -1,6 +1,7 @@
 package set.treesetmember;
 
 import java.util.Iterator;
+import java.util.NavigableSet;
 import java.util.TreeSet;
 
 public class TreeSetMember {
@@ -73,13 +74,39 @@ public class TreeSetMember {
 	//2. 내림차순 정렬
 	public void showAllDescendingMember() {
 		//내림차순 방법-1
+		/*
 		Iterator<Member> dItr = treeSet.descendingIterator(); 
 		while(dItr.hasNext()) {
 			System.out.println(dItr.next()); 	//treeSet에 저장된 객체를 리턴
 			//System.out.println(dItr.next().toString()); 	
 		}
 		System.out.println(); //구분 빈 줄
+		*/
 		
+		//내림차순 방법-2
+		NavigableSet<Member> dMemberSet = treeSet.descendingSet(); //내림차순으로 정렬된 Set
+		/*
+		for(Member member:dMemberSet) {
+			System.out.println(member);
+		}
+		*/
+		
+		
+		Iterator<Member> itr = dMemberSet.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+			//System.out.println(itr.next().toString());
+		}
+		
+		/*
+		Iterator<Member> itr = dMemberSet.descendingIterator(); //오름차순 반복자 (내림차순 정렬된 Set을 다시 내림차순 반복자로 참조하려고 하므로)
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+			//System.out.println(itr.next().toString());
+		}
+		*/
+		
+		System.out.println(); //구분 빈 줄
 		
 	}
 }

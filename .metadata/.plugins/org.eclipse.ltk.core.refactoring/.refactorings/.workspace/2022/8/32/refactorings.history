@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Java 프로젝트 &apos;테스트용프로젝트&apos;의 이름을 &apos;개인테스트&apos;(으)로 바꿉니다.&#x0D;&#x0A;- 원래 요소: &apos;테스트용프로젝트&apos;&#x0D;&#x0A;- 이름을 바꾼 요소: &apos;테스트용프로젝트&apos;&#x0D;&#x0A;- 리팩토링된 요소에 대한 참조 갱신" description="&apos;테스트용프로젝트&apos; Java 프로젝트의 이름을 바꿉니다." flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=테스트용프로젝트" name="개인테스트" references="true" stamp="1659579211362" version="1.0"/>
-</session>
