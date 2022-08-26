@@ -158,6 +158,7 @@ class Buyer {
 		//item[productCnt++] = p; //productCnt++는 이 구문이 실행된 후 값이 증가됨
 		
 		//[방법-2] ArrayList에 제품 추가
+		item.add(p);
 		
 		System.out.println(p + "를(을) 구매하셨습니다.");
 	}
@@ -254,7 +255,7 @@ public class ProductInterfaceArrayList implements ProductInterface {
 
 	@Override
 	public void menu() {
-		System.out.println();//구분위한 빈줄
+		System.out.println();	//구분위한 빈줄
 		System.out.println("**************** 가전 제품 목록 ************************");
 		System.out.println("1. TV     2. Computer     3. Audio     4. 환불");
 	}
