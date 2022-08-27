@@ -159,6 +159,7 @@ class Buyer {
 		
 		//[방법-2] ArrayList에 제품 추가
 		item.add(p);
+		productCnt++;
 		
 		System.out.println(p + "를(을) 구매하셨습니다.");
 	}
@@ -168,6 +169,46 @@ class Buyer {
 		//해당 제품을 목록에서 찾아서 있으면 제거
 		//환불받은 돈을 구매자의 돈에 추가
 		//구매자의 보너스포인트는 감소
+		
+		for(Product itemList:item) {
+			
+			if(itemList.toString().equals(p.toString())) {	
+				
+				this.money += p.productPrice; 		//제품 가격을 환불(구매자한테 돈 되돌려줌)
+				this.bonusPoint -= p.bonusPoint;	//보너스포인트 반환(환불했으므로 포인트 소멸)
+				
+				item.remove(p);		//구매리스트에서 제거됨
+				
+				System.out.println(p.toString() + "를(을) 환불해드렸습니다.");
+				System.out.println("환불금액 : " + p.productPrice + "만원");
+				System.out.println("반환된 포인트 : " + p.bonusPoint + "p");
+				
+				return;
+			}
+				
+		}
+
+		/*
+		for(int i = 0; i < productCnt; i++) {
+			
+			if(item.get(i).toString().equals(p.toString())) {	
+				
+				this.money += p.productPrice; 		//제품 가격을 환불(구매자한테 돈 되돌려줌)
+				this.bonusPoint -= p.bonusPoint;	//보너스포인트 반환(환불했으므로 포인트 소멸)
+				
+				item.remove(i);		//구매리스트에서 제거됨
+				item.remove(p);
+				
+				System.out.println(p.toString() + "를(을) 환불해드렸습니다.");
+				System.out.println("환불금액 : " + p.productPrice + "만원");
+				System.out.println("반환된 포인트 : " + p.bonusPoint + "p");
+				
+				//productCnt--;	//구매카운터 차감
+				return;
+			}
+			
+		}
+		*/
 		
 		//해당 제품을 목록에서 찾았는데 없으면
 		System.out.println("구입하신 제품은 저희 매장 제품이 아닙니다.");
