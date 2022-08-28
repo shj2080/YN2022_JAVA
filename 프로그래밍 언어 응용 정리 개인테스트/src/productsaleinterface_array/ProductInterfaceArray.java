@@ -1,6 +1,5 @@
 package productsaleinterface_array;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 //'제품' 인터페이스
@@ -157,6 +156,10 @@ class Buyer {
 		System.out.println(p + "를(을) 구매하셨습니다.");
 	}
 	
+	//[방법-1] 구매한 제품 환불
+	void refund(Product p) {
+		
+	}
 	//구매한 제품 정보 요약해서 출력
 	void summary() {
 		/* 구입하신 제품은 [TV, Computer]이고

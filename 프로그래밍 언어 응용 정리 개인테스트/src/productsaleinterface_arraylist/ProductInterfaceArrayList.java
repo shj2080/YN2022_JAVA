@@ -143,7 +143,7 @@ class Buyer {
 	}
 	
 	//'제품'을 구매한다.
-	//int productCnt = 0; //멤버변수 : 구매자가 구매한 제품 수
+	int productCnt = 0; //멤버변수 : 구매자가 구매한 제품 수
 	void buy(Product p) {
 		//구매자 돈 제품가격 비교하여 구매자의 돈이 더 적으면 메서드 종료
 		if(this.money < p.productPrice) {
@@ -159,7 +159,7 @@ class Buyer {
 		
 		//[방법-2] ArrayList에 제품 추가
 		item.add(p);
-		//productCnt++;
+		productCnt++;
 		
 		System.out.println(p + "를(을) 구매하셨습니다.");
 	}
@@ -170,7 +170,11 @@ class Buyer {
 		//환불받은 돈을 구매자의 돈에 추가
 		//구매자의 보너스포인트는 감소
 		
-		if(item.remove(p)) {	//일치하는 제품 객체 발견 시 구매리스트에서 제거됨
+		if(item.isEmpty()) { //구매리스트가 비어 있는 경우
+			System.out.println("매장에서 제품을 구매 하신 적이 없습니다.");
+			return;
+		}
+		else if(item.remove(p)) {	//일치하는 제품 객체 발견 시 구매리스트에서 제거됨 (ArrayList.remove(Object o))
 				
 				this.money += p.productPrice; 		//제품 가격을 환불(구매자한테 돈 되돌려줌)
 				this.bonusPoint -= p.bonusPoint;	//보너스포인트 반환(환불했으므로 포인트 소멸)
@@ -178,13 +182,11 @@ class Buyer {
 				System.out.println(p.toString() + "를(을) 환불해드렸습니다.");
 				System.out.println("환불금액 : " + p.productPrice + "만원");
 				System.out.println("반환된 포인트 : " + p.bonusPoint + "p");
-				
-				return; //return메서드 끝냄
 		}
-		
-		//해당 제품을 목록에서 찾았는데 없으면
-		System.out.println("구입하신 제품은 저희 매장 제품이 아닙니다.");
+		else	//해당 제품을 목록에서 찾았는데 없으면
+			System.out.println("구입하신 제품은 저희 매장 제품이 아닙니다.");
 	}
+	
 	
 	//구매한 제품 정보 요약해서 출력
 	void summary() {
@@ -240,7 +242,7 @@ class Buyer {
 		
 		if(cntAudio > 0) {
 			productList += "Audio, ";
-			productCntList += "Audio" + cntAudio + "대, ";
+			productCntList += "Audio " + cntAudio + "대, ";
 		}
 		
 		//"TV, Computer, " -> "TV, Computer"
