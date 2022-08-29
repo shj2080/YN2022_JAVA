@@ -141,20 +141,23 @@ class Buyer {
 		// 환불받은 돈을 구매자의 돈에 추가
 		// 구매자의 보너스포인트는 감소
 
-		if (item.remove(p)) {
+		if(item.isEmpty()) {
+			System.out.println("매장에서 제품을 구매한 이력이 없습니다.");
+			return;
+		}
+		else if (item.remove(p)) {
 
 			this.money += p.productPrice; // 제품 가격을 환불(구매자한테 돈 되돌려줌)
 			this.bonusPoint -= p.bonusPoint; // 보너스포인트 반환(환불했으므로 포인트 소멸)
 			
 			System.out.println(p+ "를(을) 반품하셨습니다..");
 		}
-		else if(item.isEmpty()) {
-			System.out.println("제품을 구매하지 않으셨습니다.");
-			return;
-		}
+		else System.out.println("이 제품을 구매하신 적이 없습니다.");
+		
 		
 	}
 
+	
 	void summary() {		//구매한 제품들의 정보를 출력하는 메서드
 		int sum = 0; // 구매한 제품 가격 합계
 		int cntTV = 0, cntComputer = 0, cntAudio = 0;	//제품들을 구매한 횟수
@@ -214,12 +217,14 @@ class Buyer {
 		System.out.println("구입하신 제품의 총 금액은 " + sum + "만원입니다.\n");
 		*/
 		
+		
 		System.out.println("출력방법-[3]");
 	    productList = String.join(",", item.toString());
 	    System.out.println("구입하신 제품은 "+productList+"이고 ");
 	    System.out.println();//구분위한빈줄
 	    System.out.println("구입하신 제품의 총 금액은 " + sum + "만원입니다.\n");
 	    
+		
 	}
 
 }
