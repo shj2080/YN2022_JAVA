@@ -5,7 +5,7 @@
  * 3. 키 : 중복X , 값 : 중복O
  * 4. 만약 기존에 저장된 키와 동일한 키로 값을 저장하면 기존의 값은 없어지고 새로운 값으로 대체된다.
  * 
- * HashMap : 싱클쓰레드(※ HashTable : 멀티쓰레드)
+ * HashMap : 싱글쓰레드(※ HashTable : 멀티쓰레드)
  * TreeMap
  */
 
@@ -73,9 +73,10 @@ public class HashMapExample {
 
 		System.out.println("[방법-4] : entryset() -> 반복자 Iterator 이용");
 		Iterator<Entry<Integer, String>> eitr = eSet.iterator(); // <키,값>Entry 반복자를 통해
+		
 		while(eitr.hasNext()) {
-		Entry<Integer, String> entry= eitr.next();//Map.Entry하나씩 얻어와 
-		System.out.println(entry.getKey() + "번의 이름은 " + entry.getValue()); // 키와 값 출력
+			Entry<Integer, String> entry= eitr.next();//Map.Entry하나씩 얻어와 
+			System.out.println(entry.getKey() + "번의 이름은 " + entry.getValue()); // 키와 값 출력
 		}
 		System.out.println();//구분위한 빈줄
 
