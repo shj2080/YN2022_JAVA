@@ -14,6 +14,13 @@ public class TreeSetMember {
 		treeSet = new TreeSet<Member>();
 	}
 	
+	/*---------------------------------------------------------*/	
+	//※ Comparator<T> 사용 시 유의점 : TreeSet() 생성자에 'Comparator를 구현한 객체★'를 매개값으로 전달해야 함
+	public TreeSetMember(Member member) {//Member객체를 member에 담아 매개값으로 , 내림차순 정렬된 TreeSet
+		treeSet = new TreeSet<Member>(member);		
+	}	
+	/*---------------------------------------------------------*/
+	
 	//[포함관계 순서-3] 외부에 노출된 메서드
 	//회원 추가------------------------------------------------
 	public void addMember(Member m) { //회원 추가
@@ -21,6 +28,10 @@ public class TreeSetMember {
 		/* 1. TreeSet<Member>() 생성자로 객체 생성
 		 * 	  add() 호출되면 compareTo()메서드가 자동호출되어 크기를 비교해가면서 '오름차순' 정렬시켜 저장
 		 * 
+		 * 2. TreeSet(Member member) 생성자로 객체 생성
+		 *    ※ 매개변수 Member 클래스는 반드시 Comparator인터페이스를 구현해야 함
+		 *    add() 호출되면 compare()메서드가 자동호출되어 크기를 비교해가면서 '내림차순'정렬시켜 저장
+		 *     (반환값이 0이면 동일객체로 인식하여 추가X, 즉 중복된 객체는 추가X)
 		 */
 	}
 	
@@ -62,7 +73,7 @@ public class TreeSetMember {
 	}
 	
 	//회원 정보 출력------------------------------------------------
-	//1. 오름차순 정렬
+	//[1. 오름차순 정렬]
 	public void showAllMember() {
 		for(Member member:treeSet) {
 			System.out.println(member);
@@ -70,8 +81,11 @@ public class TreeSetMember {
 		}
 		System.out.println(); //구분 빈 줄
 	}
-	
-	//2. 내림차순 정렬
+	//---
+	//1. TreeSet<member>() 생성자로 객체 생성 => 내림차순 정렬
+	//2. TreeSet<member>(Member member) 생성자로 객체 생성 => 오름차순 정렬
+	//----
+	//[2. 내림차순 정렬]
 	public void showAllDescendingMember() {
 		//내림차순 방법-1
 		/*
