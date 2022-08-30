@@ -164,7 +164,7 @@ class Buyer {	//구매자 클래스
 		int cntTV = 0, cntComputer = 0, cntAudio = 0;	//제품들을 구매한 횟수
 		int totalCnt = 0;	//제품 구매한 횟수 합계
 		
-		if (item.isEmpty()) {
+		if (item.isEmpty()) {	//구매한 제품이 없는 경우
 			System.out.println("구매자는 제품을 구매하지 않았습니다.");
 			return;
 		}
@@ -192,8 +192,9 @@ class Buyer {	//구매자 클래스
 		}
 		*/
 
-		String productList = ""; //[출력방법-1]
-		String productCntList = "";
+		//[출력방법-2]
+		String productList = ""; 
+		//String productCntList = "";	//제품 구매 횟수를 카운팅 할 때 사용(이 패키지에선 사용하지 않음)
 		if (cntTV > 0) {
 			productList += "TV, ";
 		}
@@ -207,15 +208,18 @@ class Buyer {	//구매자 클래스
 
 		productList = productList.substring(0, productList.length() - 2);
 
+		/*
 		System.out.println("가장 간단한 방법-1");
 		System.out.println("구입하신 제품은 " + item + "이고"); //[주소1,주소2,주소3] - 배열 내용을 모두 출력하므로 중복된 내용이 나올 수도 있음
+		*/
 		
-		//출력-[방법-1] itemList+ "TV" + ",Computer"
+		//출력방법-[1] itemList+ "TV" + ",Computer"
 		//productList = productList +((i==0)? ""+p : ","+p);
 		//productList = productList +((i==0)? "" + p.toString()+","+p);
 		
 		
-		System.out.println("출력방법-2");
+		//출럭방법-[2] - 구매한 제품리스트가 중복되지 않게 출력
+		System.out.println("출력방법-[2]");
 		System.out.println("구입하신 제품은 [" + productList + "]이고");
 	    System.out.println();//구분위한빈줄
 		System.out.println("구입하신 제품의 총 금액은 " + sum + "만원입니다.\n");
