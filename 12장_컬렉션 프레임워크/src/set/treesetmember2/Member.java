@@ -65,7 +65,7 @@ public class Member implements Comparable<Member>{ // 부모:Object
 		else if (this.memberID == o.memberID)
 			return 0; // 새로 추가되는 값 - 기존의 비교하는 값 == 0 => 대표값 0리턴
 		else
-			return -1; // 새로 추가되는 값 - 기존의 비교하는 값 < 0 => 대표값 -1리턴
+			return -1; // 새로 추가되는 값 - 기존의 비교하는 값 > 0 => 대표값 -1리턴
 
 	}
 
