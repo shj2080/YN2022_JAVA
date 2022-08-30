@@ -81,7 +81,7 @@ public class Member implements Comparable<Member>, Comparator<Member> { //부모
 
 		// 내림차순 정렬-2
 		if (o1.memberID < o2.memberID)
-			return 1; // 새로 추가되는 값 - 기존의 비교하는 값 > 0 => 대표값 1리턴
+			return 1; // 새로 추가되는 값 - 기존의 비교하는 값 < 0 => 대표값 1리턴
 		else if (o1.memberID == o2.memberID)
 			return 0; // 새로 추가되는 값 - 기존의 비교하는 값 == 0 => 대표값 0리턴
 		else
