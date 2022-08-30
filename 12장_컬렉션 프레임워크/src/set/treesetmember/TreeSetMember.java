@@ -11,13 +11,13 @@ public class TreeSetMember {
 	
 	//[포함관계 순서-2] 매개변수가 없는 생성자
 	public TreeSetMember() { //오름차순 정렬된 TreeSet
-		treeSet = new TreeSet<Member>();
+		treeSet = new TreeSet<Member>(); 		//compareTo() 메서드가 내부적으로 호출됨 (정의된 방식으로 Tree를 정렬)
 	}
 	
 	/*---------------------------------------------------------*/	
 	//※ Comparator<T> 사용 시 유의점 : TreeSet() 생성자에 'Comparator를 구현한 객체★'를 매개값으로 전달해야 함
-	public TreeSetMember(Member member) {//Member객체를 member에 담아 매개값으로 , 내림차순 정렬된 TreeSet
-		treeSet = new TreeSet<Member>(member);		
+	public TreeSetMember(Member member) {	//Member객체를 member에 담아 매개값으로 , 내림차순 정렬된 TreeSet
+		treeSet = new TreeSet<Member>(member);	//compare() 메서드가 내부적으로 호출됨  (정의된 방식으로 Tree를 정렬)
 	}	
 	/*---------------------------------------------------------*/
 	

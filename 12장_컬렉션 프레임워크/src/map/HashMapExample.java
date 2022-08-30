@@ -55,7 +55,7 @@ public class HashMapExample {
 
 			// System.out.println(key+"번의 이름은 "+map.get(key));
 
-			String value = map.get(key);
+			String value = map.get(key);	//해당 키값에 저장된 내용을 String value에 담음.
 			System.out.println(key + "번의 이름은 " + value);
 
 		}
@@ -65,8 +65,9 @@ public class HashMapExample {
 		// entrySet()메서드로 '모든 키와 값인 Map.Entry' 얻어 Set객체로 담아
 		Set<Entry<Integer, String>> eSet = map.entrySet();
 
+		//entry.getKey() : 해당 Entry의 키를 리턴      entry.getValue() : 해당 Entry의 값을 리턴
 		System.out.println("[방법-3] : entrySet() -> 향상된 for문");
-		for (Entry<Integer, String> entry : eSet) {
+		for (Entry<Integer, String> entry : eSet) {		//키 객체타입: Integer		값 객체타입: String
 			System.out.println(entry.getKey() + "번의 이름은 " + entry.getValue());
 		}
 		System.out.println("");// 구분위한 빈줄
@@ -74,20 +75,22 @@ public class HashMapExample {
 		System.out.println("[방법-4] : entryset() -> 반복자 Iterator 이용");
 		Iterator<Entry<Integer, String>> eitr = eSet.iterator(); // <키,값>Entry 반복자를 통해
 		
-		while(eitr.hasNext()) {
+		while(eitr.hasNext()) {	// Map.Entry가 남아있다면
 			Entry<Integer, String> entry= eitr.next();//Map.Entry하나씩 얻어와 
 			System.out.println(entry.getKey() + "번의 이름은 " + entry.getValue()); // 키와 값 출력
 		}
 		System.out.println();//구분위한 빈줄
 
 		System.out.println("****** 저장된 전체 객체를 대상으로 삭제하는 방법 ******");
-		System.out.println("3번 객체 삭제 후 값을 리턴 : " + map.remove(3));
+		System.out.println("3번 객체 삭제 후 값을 리턴 : " + map.remove(3));	//3번 Key(Integer 3)에 저장된 객체(String "이순신")가 삭제되고 그 값을 리턴
 		
-		map.clear();//객체 전체 삭제
+		map.clear();//객체 전체 삭제 	(HashMap을 모두 비움)
 		System.out.println("저장된 총 Entry 객체수 : " + map.size()); //0
 		
-		if(map.isEmpty()) System.out.println("모두 삭제되어 비어있음");
-		else System.out.println("비어있지 않음");
+		if(map.isEmpty())
+			System.out.println("모두 삭제되어 비어있음");
+		else
+			System.out.println("비어있지 않음");
 		
 	}
 

@@ -207,6 +207,9 @@ class Buyer {	//구매자 클래스
 
 		productList = productList.substring(0, productList.length() - 2);
 
+		System.out.println("가장 간단한 방법-1");
+		System.out.println("구입하신 제품은 " + item + "이고"); //[주소1,주소2,주소3] - 배열 내용을 모두 출력하므로 중복된 내용이 나올 수도 있음
+		
 		//출력-[방법-1] itemList+ "TV" + ",Computer"
 		//productList = productList +((i==0)? ""+p : ","+p);
 		//productList = productList +((i==0)? "" + p.toString()+","+p);

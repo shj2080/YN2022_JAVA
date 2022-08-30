@@ -11,9 +11,9 @@
 	정렬은 불가함
 	
 	TreeMap
-	삽입 / 삭제가 굉장히 느림,
+	삽입 / 삭제가 굉장히 느림
 	삽입순서를 보장함
-	Map이지만 유일하게 정렬이 가능함. 
+	Map이지만 유일하게 정렬이 가능함.
 */
 
 package map.hashmapstudent;
@@ -29,13 +29,14 @@ public class HashMap_Student {
     	Student key = new Student(1, "홍길동");
     	map.put(key, 85);//int 85 -> 자동Boxing되어 'Integer객체'
     	
-    	map.put(new Student(1, "홍길동"), 95);
+    	map.put(new Student(1, "홍길동"), 95);	//★★hashCode()와 equals()를 값으로 비교하도록 재정의 하지 않을 경우 중복된 학생이 추가됨!
     	
     	System.out.println("저장된 총 Entry 객체수 : " + map.size()); //2개 => 1개가 되도록 소스를 수정해야함 [중복]
     	
     	System.out.println("[map 주소만 Entry값이 출력] : " + map);//Entry값이 아니라 "클래스이름을@16진수 해쉬코드"
-    	/*1.
-    	 * {map.hashmapstudent.Student@1c4af82c=85, map.hashmapstudent.Student@5e91993f=85}
+    	/*
+    	 1.
+    	 {map.hashmapstudent.Student@1c4af82c=85, map.hashmapstudent.Student@5e91993f=85}
         => Entry값이 아니라 "클래스이름을16진수해쉬코드" 출력된 이유? Student클래스 안에 toString() 재정의 하지않아서
     	
     	 2. Student클래스 안에 toString() 재정의
@@ -45,10 +46,8 @@ public class HashMap_Student {
     	 
     	 3.
     	 => Student키가 중복되지 않도록 하기 위해서
-         => hashCode(), equals() 로 같은 객체로 인식할 수 있도록 재정의해야함 -> 메서드를 주소가 아니라 값을 비교하도록 재정의필요    	
+         => hashCode(), equals() 로 같은 객체로 인식할 수 있도록 재정의해야함 -> 메서드를 주소가 아니라 값을 비교하도록 재정의 필요    	
     	*/
-    	
-    	
     	
 	}
 

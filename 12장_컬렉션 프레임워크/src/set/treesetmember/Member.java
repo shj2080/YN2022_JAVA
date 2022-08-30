@@ -63,11 +63,11 @@ public class Member implements Comparable<Member>, Comparator<Member> { //부모
 		
 		//오름차순 정렬-2
 		if(this.memberID > o.memberID) //새로 추가되는 값 - 기존의 비교하는 값 > 0 => 대표값 1리턴
-			return 1;
+			return 1;	//루트 노드의 오른쪽에 추가
 		else if(this.memberID == o.memberID)  //새로 추가되는 값 - 기존의 비교하는 값 == 0 => 대표값 0리턴
-			return 0;
+			return 0;	//중복된 값 추가 안 됨
 		else							//새로 추가되는 값 - 기존의 비교하는 값 < 0 => 대표값 -1리턴
-			return -1;
+			return -1;	//루트 노드의 왼쪽에 추가
 		
 	}
 
@@ -80,12 +80,12 @@ public class Member implements Comparable<Member>, Comparator<Member> { //부모
 		// 새로 추가되는 값 - 기존의 비교하는 값 = 반환값이 0이면 add()안됨(중복되어)
 
 		// 내림차순 정렬-2
-		if (o1.memberID < o2.memberID)
-			return 1; // 새로 추가되는 값 - 기존의 비교하는 값 < 0 => 대표값 1리턴
-		else if (o1.memberID == o2.memberID)
-			return 0; // 새로 추가되는 값 - 기존의 비교하는 값 == 0 => 대표값 0리턴
-		else
-			return -1; // 새로 추가되는 값 - 기존의 비교하는 값 > 0 => 대표값 -1리턴
+		if (o1.memberID < o2.memberID)			// 새로 추가되는 값 - 기존의 비교하는 값 < 0 => 대표값 1리턴
+			return 1; //루트 노드의 오른쪽에 추가
+		else if (o1.memberID == o2.memberID)	// 새로 추가되는 값 - 기존의 비교하는 값 == 0 => 대표값 0리턴
+			return 0; //중복된 값 추가 안 됨
+		else									// 새로 추가되는 값 - 기존의 비교하는 값 > 0 => 대표값 -1리턴
+			return -1; //루트 노드의 왼쪽에 추가
 		
 		//내림차순 정렬-3
 		//return o1.compareTo(o2)*(-1); //제일 심플함

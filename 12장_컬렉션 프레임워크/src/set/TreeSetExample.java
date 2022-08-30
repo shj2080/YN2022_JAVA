@@ -165,6 +165,8 @@ public class TreeSetExample {
 		
 		System.out.print("b~e 사이의 단어 검색 : ");
 		// 시작객체 "b" <= 찾는 객체 <= 끝객체"e"(★★주의 단, element 제외-이유?e보다 element가 코드값이 크기 때문에)
+		// "element" 포함하려면 아래 주석처리된 subSet 사용
+		//NavigableSet<String> set = treeSet2.subSet("b", true, "em", true);
 		NavigableSet<String> set = treeSet2.subSet("b", true, "e", true);
 		System.out.println(set); //[banana, black, cherry, door, e]
 		
