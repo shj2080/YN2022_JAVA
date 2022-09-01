@@ -87,7 +87,7 @@ public class TreeSetMember {
 	//2. TreeSet<member>(Member member) 생성자로 객체 생성 => 내림차순 정렬
 	public void showAllDescendingMember() {
 		System.out.println("[내림차순 정렬]");
-		//내림차순 방법-1
+		//1. 내림차순 방법-1
 		/*
 		Iterator<Member> dItr = treeSet.descendingIterator(); 
 		while(dItr.hasNext()) {
@@ -97,7 +97,7 @@ public class TreeSetMember {
 		System.out.println(); //구분 빈 줄
 		*/
 		
-		//내림차순 방법-2
+		//2. 내림차순 방법-2
 		NavigableSet<Member> dMemberSet = treeSet.descendingSet(); //내림차순으로 정렬된 Set
 		/*
 		for(Member member:dMemberSet) {

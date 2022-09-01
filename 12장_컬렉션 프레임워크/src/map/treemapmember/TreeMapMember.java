@@ -1,5 +1,8 @@
 package map.treemapmember;
 
+import java.util.Iterator;
+import java.util.NavigableMap;
+import java.util.NavigableSet;
 import java.util.TreeMap;
 
 public class TreeMapMember {
@@ -79,5 +82,26 @@ public class TreeMapMember {
 		System.out.println(); //구분 빈 줄
 	}
 	
-	
+	//2. TreeMap<Integer, Member>() 생성자로 객체 생성 => Key를 기준으로 내림차순 정렬
+	public void showAllDescendingMember() {
+		System.out.println("[내림차순 정렬]");
+		
+		//1. 내림차순 방법-1
+		/*
+		NavigableSet<Integer> dKeySet = treeMap.descendingKeySet();
+		//1-2. 향상된 for문 또는 Iterator 사용
+		for(Integer key:dKeySet) {
+			System.out.print(key + "=" + treeMap.get(key) + " ");
+		}
+		System.out.println(); //커서 내림
+		*/
+		
+		//2. 내림차순 방법-2
+		
+		NavigableMap<Integer, Member> dMap = treeMap.descendingMap(); //Key를 기준으로 내림차순 정렬된 Map객체 생성
+		System.out.println(dMap); //주소만으로 내림차순 정렬된 값이 출력
+		
+		
+		System.out.println(); //구분 빈 줄
+	}
 }
