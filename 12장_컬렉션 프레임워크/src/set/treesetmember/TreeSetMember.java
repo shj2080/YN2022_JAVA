@@ -27,6 +27,7 @@ public class TreeSetMember {
 		treeSet.add(m); //실질적인 메서드는 TreeSet<Member>객체 안에 있으므로
 		/* 1. TreeSet<Member>() 생성자로 객체 생성
 		 * 	  add() 호출되면 compareTo()메서드가 자동호출되어 크기를 비교해가면서 '오름차순' 정렬시켜 저장
+		 * 	   (반환값이 0이면 동일객체로 인식하여 추가X, 즉 중복된 객체는 추가X)
 		 * 
 		 * 2. TreeSet(Member member) 생성자로 객체 생성
 		 *    ※ 매개변수 Member 클래스는 반드시 Comparator인터페이스를 구현해야 함
@@ -37,7 +38,7 @@ public class TreeSetMember {
 	
 	
 	//회원 삭제------------------------------------------------
-	//'회원 아이디'로 삭제
+	//1.'회원 아이디'로 삭제
 	public boolean removeMember(int memberID) { //memberID : 매개값
 		Iterator<Member> itr = treeSet.iterator(); //오름차순 반복자 생성
 		
@@ -54,7 +55,7 @@ public class TreeSetMember {
 		return false; //삭제 실패
 	}
 	
-	//'회원'으로 삭제
+	//2.'회원'으로 삭제
 	public boolean removeMember(Member member) { // member : 매개값
 		Iterator<Member> itr = treeSet.iterator(); //오름차순 반복자 생성
 		
@@ -73,20 +74,19 @@ public class TreeSetMember {
 	}
 	
 	//회원 정보 출력------------------------------------------------
-	//[1. 오름차순 정렬]
+	//1. TreeSet<member>() 생성자로 객체 생성 => 오름차순 정렬
 	public void showAllMember() {
+		System.out.println("[오름차순 정렬]");
 		for(Member member:treeSet) {
 			System.out.println(member);
 			//System.out.println(member.toString());
 		}
 		System.out.println(); //구분 빈 줄
 	}
-	//---
-	//1. TreeSet<member>() 생성자로 객체 생성 => 내림차순 정렬
-	//2. TreeSet<member>(Member member) 생성자로 객체 생성 => 오름차순 정렬
-	//----
-	//[2. 내림차순 정렬]
+
+	//2. TreeSet<member>(Member member) 생성자로 객체 생성 => 내림차순 정렬
 	public void showAllDescendingMember() {
+		System.out.println("[내림차순 정렬]");
 		//내림차순 방법-1
 		/*
 		Iterator<Member> dItr = treeSet.descendingIterator(); 
