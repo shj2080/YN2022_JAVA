@@ -53,7 +53,7 @@ public class IDFormatTest {
 			//사용자 정의 예외 객체는 수동으로 생성
 			throw new IDFormatException("아이디는 null일 수 없습니다.");
 		}
-		else if( !(8 <= userID.length() && userID.length() <= 20) ) {
+		else if( !(8 <= userID.length() && userID.length() <= 20) ) { //8자 이상, 20자 이하가 아니라면 (논리연산자 !)
 			throw new IDFormatException("아이디는 8자 이상 20자 이하로 쓰세요.");
 		}
 		
@@ -64,8 +64,17 @@ public class IDFormatTest {
 	public static void main(String[] args) { //throws IDFormatException {
 		IDFormatTest test = new IDFormatTest(); //기본생성자
 		
+		String userID = null;
 		try {
-			test.setUserID(null);
+			test.setUserID(userID);
+		} catch (IDFormatException e) {
+			//e.printStackTrace();
+			System.out.println(e);
+		}
+		
+		userID = "1234567";
+		try {
+			test.setUserID(userID);
 		} catch (IDFormatException e) {
 			//e.printStackTrace();
 			System.out.println(e);
