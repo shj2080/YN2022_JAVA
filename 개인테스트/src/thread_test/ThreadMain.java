@@ -8,7 +8,7 @@ public class ThreadMain {
 		t1.setName("num10_Thread");
 		t1.start(); //Thread 시작
 		
-		Thread t2 = new Thread(new Runnable() { //다른 Thread가 Vector 읽기 (Runnable 익명객체)
+		Thread t2 = new Thread(new Runnable() { //Thread (Runnable 익명객체)
 
 			@Override
 			public void run() {

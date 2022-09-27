@@ -13,7 +13,7 @@ public class Data implements Runnable{
 	}
 
 	@Override
-	public void run() {		//Thread가 작업하는 메서드 - Vector에 추가
+	public void run() {		//Thread가 작업하는 메서드
 		System.out.println(Thread.currentThread().getName() +  " 시작");
 		for(int i = 0 ; i <= 30; i++) {
 			System.out.println(Thread.currentThread().getName() + " 작업중=" + num++);
